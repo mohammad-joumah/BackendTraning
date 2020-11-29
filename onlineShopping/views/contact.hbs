@@ -1,0 +1,28 @@
+<form class="container " action="/send" method="POST" style="margin-top: 60px;">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-6">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="email">
+            </div>
+
+            <div class="col-6">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="subject">subject</label>
+            <input type="text" class="form-control" name="subject" id="subject" placeholder="subject">
+        </div>
+        <div class="form-group">
+            <label for="message">message</label>
+            <textarea class="form-control" id="message" name="message" rows="3" placeholder="message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">sind</button>
+</form>
+{{#if msg}}
+<div class="alert alert-light" role="alert">
+    {{msg}}
+</div>
+{{/if}}

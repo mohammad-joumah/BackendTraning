@@ -1,0 +1,140 @@
+{{#if errorMSG}}
+        <div class="alert alert-danger" role="alert">
+            {{errorMSG}}
+        </div>
+{{/if}}
+
+
+<form action="/user/create" method="POST"  enctype="multipart/form-data">
+    <div class="row">
+        <div class="form-group col-3">
+            <label for="firstName">First name:</label>
+            <input type="text" name="firstName" class="form-control" id="firstName" placeholder="First name">
+        </div>
+        <div class="form-group col-3">
+            <label for="middleName">Middle Name:</label>
+            <input type="text" class="form-control" id="middleName" placeholder="middle Name">
+        </div>
+        <div class="form-group col-3">
+            <label for="lastName">Last Name:</label>
+            <input type="text" name="lastName" class="form-control" id="lastName" placeholder="Last Name">
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="form-group col-4 ml-3 mr-4  ">
+            <div class="row">
+            <label for="email">Email:</label>
+            <input type="email" name="email" class="form-control" id="email" placeholder="email@example.com">
+            </div>
+            {{#if errors}}
+            {{#each errors}}
+                {{#if (ifCond param 'email')}}
+                
+                <div class="alert alert-danger row">
+                    {{ msg }}
+                </div>
+                
+                {{/if}}
+            {{/each}}
+        {{/if}}
+        </div>
+        <div class="form-group col-4  mr-4">
+            <div class="row">
+            <label for="password">Password:</label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password" >
+        </div>
+        {{!-- <div id="passCheck"></div> --}}
+        {{#if errors}}
+            {{#each errors}}
+                {{#if (ifCond param 'password')}}
+                
+                <div class="alert alert-danger row">
+                    {{ msg }}
+                </div>
+                
+                {{/if}}
+            {{/each}}
+        {{/if}}
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="form-group col-4">
+            <label for="country">Country:</label>
+            <input type="text" name="country" class="form-control" id="country" placeholder="Country">
+        </div>
+        <div class="form-group col-4">
+            <label for="country_code">Country Code</label>
+            <select class="form-control" id="country_code" name="country_code">
+                <option disabled selected>Select One</option>
+                <option value="de">DE(Germany)</option>
+                <option value="en">EN(England)</option>
+                <option value="sy">SY(Syria)</option>
+                <option value="db">BD(Bangladesh)</option>
+                <option value="in">IN(India)</option>
+                <option value="iq">IQ(Iraq)</option>
+                <option value="tr">TR(Turky)</option>
+                <option value="ch">CH(China)</option>
+                <option value="it">IT(Italy)</option>
+            </select>
+        </div>
+    </div>
+    <hr>
+    <label class="row">Address:</label>
+    <div class="row">
+        <div class="form-group col-4">
+            <label for="street">Street:</label>
+            <input type="text" name="street" class="form-control" id="street" placeholder="Street">
+        </div>
+        <div class="form-group col-2">
+            <label for="hous_no">HousNo:</label>
+            <input type="text" name="hous_no" class="form-control" id="hous_no" placeholder="HousNo">
+        </div>
+        <div class="form-group col-3">
+            <label for="zip">zip:</label>
+            <input type="number" name="zip" class="form-control" id="zip" placeholder="zip" min="1000" max="99999">
+        </div>
+        <div class="form-group col-4">
+            <label for="city">City:</label>
+            <input type="text" name="city" class="form-control" id="city" placeholder="City">
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="form-group col-3">
+            <label for="age">age:</label>
+            <input type="number" name="age" class="form-control" id="age" placeholder="age shoud be between 16 to 70"  min="16" max="70">
+        </div>
+        <div class="form-group col-3">
+            <label for="upload">Upload your profile picture</label>
+            <input type="file" name="upload">
+        </div>
+        <div class="form-group col-4">
+            <label for="gender">Gender:</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" value="true" checked>
+                <label class="form-check-label" for="gender">
+                    Male
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender"  value="false">
+                <label class="form-check-label" for="exampleRadios2">
+                    Female
+                </label>
+            </div>
+        </div>
+        <div class="form-group col-4">
+            <label for="role">Role</label>
+            <select class="form-control" id="role" name="role">
+                <option disabled selected>Select One</option>
+                <option value="admin">Admin</option>
+                <option value="customer">Costumer</option>
+            </select>
+        </div>
+    </div>
+    <hr>
+    <button type="submit" class="btn btn-primary">Create Account</button>
+    <button type="reset" class="btn btn-danger mr-2">Reset</button>
+</form>

@@ -1,0 +1,30 @@
+<form action="/sign" method="POST" enctype="multipart/form-data" id="signup">
+    <h1>Sign Up</h1>
+    {{#if message}}
+    <div class="alert alert-danger" role="alert">{{message}}</div>
+    {{/if}}
+    <fieldset>
+        <legend><span class="number">1</span>Your basic info</legend>
+        {{!-- <label for="name">ID:</label>
+    <input type="text" id="name" name="user_id" required> --}}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="first_name">
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="name1" name="last_name">
+
+        <label for="mail">Email:</label>
+        <input type="email" id="mail" name="email">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <div class="row d-flex justify-content-between">
+            <label>Age:</label>
+            <input type="number" id="age" name="age" class="col-4">
+            <label> Birth date:</label>
+            <input type="date" id="bDate" name="bDate" class="col-4">
+        </div>
+        <label> Uploud your image</label>
+        <input type="file" name="upload">
+    </fieldset>
+    <button type="submit" id="signupbtn">Sign Up</button>
+</form>

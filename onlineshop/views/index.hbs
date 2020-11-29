@@ -1,0 +1,53 @@
+<h1>Create products</h1>
+{{#if msg}}
+    <div class="alert alert-primary" role="alert">
+        {{ msg }}
+    </div>
+{{/if}}
+<form action="/product/create" method="POST">
+    <div class="form-group">
+        <label for="product_name">Product Name</label>
+        <input type="text" name="product_name" class="form-control" id="product_name" aria-describedby="emailHelp"></div>
+        <div class="form-group">
+            <label for="price">Product price</label>
+            <input type="number" name="price" class="form-control" id="price" aria-describedby="emailHelp"></div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+        <hr>
+            {{#if data}}
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Created At</th>
+                            <th scope="col">price</th>
+                            <th scope="col">option</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each data}}
+                            <tr>
+                                <td>{{ _id }}</td>
+                                <td>{{ product_name }}</td>
+                                <td>{{ created_at }}</td>
+                                <td>{{ price }}</td>
+                                <td>
+                                    <a href="/product/delete/{{ _id }}">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                     {{!-- <button type="button" class="btn btn-success" onclick="getProduct('{{ _id }}')" data-toggle="modal" data-target="#exampleModal">
+                                        <i class="fas fa-info-circle"></i>
+                                    </button> --}}
+                                    <a href="/product/detail/{{ _id }}">
+                                        <i class="fas fa-info-circle"></i>
+                                    </a>
+                                    <a href="/product/edit/{{ _id }}">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            {{/if}}

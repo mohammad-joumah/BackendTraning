@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Online Shopping</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!--- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Metro 4 -->
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+    <!-- Styling things(mainly login)-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <!--Header & NAV -->
+    <header>
+        <nav>
+            <div data-expand-point="md" class="d-flex justify-content-between bg-dark fg-white">
+
+                <ul class="app-bar-menu col-4" id="menu">
+                    <i> <a class="navbar-brand" href="/">Bay & Sale</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button></i>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/contact">Contact</a>
+                    </li>
+
+                </ul>
+                <div class="d-flex p-2 col-md-8">
+                    {{!-- search area --}}
+                    <form action="/search" method="POST" class="form-inline col-sm-6 col-md-7">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                    {{#if userLogin}}
+
+
+                    <!-- SignIN and REgister Button --->
+
+
+
+
+                    <div class="d-flex justify-content-start col-sm-4 col-md-6">
+                        <button type="button" class="btn" id="myBtn"><a id="registerBtn" href="/profile"><img
+                                    src="/img/{{userLogin.photo.filename}}"
+                                    style="width: 40px;border-radius: 50%;">{{userLogin.first_name}}
+                                {{userLogin.last_name}}</a></button>
+                        <button type="button" class="btn" id="myBtn"><a id="registerBtn"
+                                href="/signout">Signout</a></button>
+
+
+                        {{else}}
+
+
+                        <div class="d-inline-flex col-sm-4 col-md-6">
+                            <button type="button" class="btn" id="myBtn"><a id="registerBtn" href="/signin">Sign
+                                    in</a></button>
+                            <button type="button" class="btn" id="buttonForRegister"><a id="registerBtn" href="/signup">
+                                    Register</a></button>
+
+                        </div>
+                    </div>
+
+                    {{/if}}
+                </div>
+                {{!-- end search erea --}}
+
+        </nav>
+    </header>
+    <!--Header & NAV end -->
+    <div style="margin-top: 3%;">
+        {{#if message}}
+        <div class="alert alert-success" role="alert">
+            You are success puy it!
+        </div>
+        {{/if}}
+        <!--Start Body-->
+        {{{body}}}
+        <!--End body -->
+    </div>
+    <!--FOOTER -->
+    <footer id="footerID" class="page-footer  font-medium bg-secondary">
+
+        <!-- Footer Elements -->
+        <div class="container">
+            <!-- Grid row-->
+            <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-12 py-5 text-center">
+                    <div class="flex-center">
+                        <!-- Facebook -->
+                        <a class="fb-ic" style="color: white;">
+                            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                        </a>
+                        <!-- Twitter -->
+                        <a class="tw-ic" style="color: white;">
+                            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                        </a>
+                        <!-- Google +-->
+                        <a class="gplus-ic" style="color: white;">
+                            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                        </a>
+                        <!--Linkedin -->
+                        <a class="li-ic" style="color: white;">
+                            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                        </a>
+                        <!--Instagram-->
+                        <a class="ins-ic" style="color: white;">
+                            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                        </a>
+                        <!--Pinterest-->
+                        <a class="pin-ic" style="color: white;">
+                            <i class="fab fa-pinterest fa-lg white-text fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row-->
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3" style="color: silver;">© 2020 Copyright:
+                <a href="#">
+                    Dream-Team</a>
+            </div>
+            <!-- Copyright -->
+        </div>
+    </footer>
+    <!-- Footer Elements -->
+
+
+
+
+
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap core JavaScript -->
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+    <script src="/js/script.js"></script>
+
+
+
+</body>
+
+</html>

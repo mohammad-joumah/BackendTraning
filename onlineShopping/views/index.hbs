@@ -1,0 +1,18 @@
+<div class="d-flex flex-wrap">
+    {{#each data}}
+
+    <div class="card col-md-3 col-sm-12 ml-1">
+        <a href="/productID/{{_id}}">
+            <img class="card-img-top" src="/img/{{photo.filename}}" alt="Card image cap">
+            <div class="card-body">
+                <h2>{{articaleName}}</h2>
+                <h4>Price: <span style="font-size: large;color: green;">{{articalePrice}}<i
+                            class="fas fa-euro-sign"></i></span></h4>
+                <p class="card-text">{{description}}</p>
+            </div>
+        </a>
+
+    </div>
+
+    {{/each}}
+</div>

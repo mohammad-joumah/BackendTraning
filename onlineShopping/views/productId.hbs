@@ -1,0 +1,16 @@
+<div class="card col-3" style="width: 18rem;">
+    <form action="/puy" method="POST">
+        <img class="card-img-top" src="/img/{{data.photo.filename}}" alt="Card image cap">
+        <div class="card-body">
+            <h2>{{data.articaleName}}</h2>
+            <h4>Price:<span style="font-size: large;color: green;">{{data.articalePrice}}<i
+                        class="fas fa-euro-sign"></i></span></h4>
+            <p class="card-text">{{data.description}}</p>
+            <button type="submit" class="btn btn-danger">buy</button>
+
+    </form>
+    {{#if edit}}
+    {{{edit}}}
+    {{/if}}
+</div>
+</div>

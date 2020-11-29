@@ -1,0 +1,57 @@
+<h1> Profile Page </h1>
+{{#if seccessMSG}}
+    <div class="alert alert-primary" role="alert">
+        {{seccessMSG}}
+    </div> 
+{{/if}}
+<div class="header bg-cyan fg-white">
+    
+    {{#if user.profilePic}}
+        <a href="#" onclick="getPicUpdate('{{user.profilePic._id}}')" data-toggle="modal" data-target="#productDetailId">
+            <img src="/image/{{user.profilePic.filename}}"
+                class="avatar"
+                style="width:130px">
+        </a>
+
+    {{/if}}
+        <form action="/user/uploadpic" method="POST" enctype="multipart/form-data" > 
+            <input type="file" name="upload">
+            <button type="submit">upload</button>
+        </form>
+        <div class="title">{{user.fullName}}</div>
+        
+    
+    </div>
+</div>
+{{#if user}}
+    {{#with user}}
+        {{#if facebook_name}} <h1> Name is {{facebook_name}} </h1>
+        {{else}}
+        <h1>Name is {{fullName}}</h1> 
+        {{/if}}
+    {{/with}}
+{{/if}}
+
+<h3 class="ml-4 col-sm-10 mt-md-5 mb-5">Alboms</h3>
+<div class="d-flex justify-content-around flex-wrap">
+    {{#each user.oldProfilePic}}
+        <div class="card mb-3 col-md-2 col-sm-11 ml-3" >
+            <div class="row no-gutters m-auto"> 
+                <div class="col-12">
+                    <div class="card-body">
+                        <img src="/image/{{filename}}"
+                            class="avatar"
+                            style="width:130px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>
+<div class="modal fade" id="productDetailId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" id="resultId"></div>
+</div>
+
+<div class="modal fade" id="productUpdateId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" id="updateFormId"></div>
+</div>

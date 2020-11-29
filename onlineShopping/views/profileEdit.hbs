@@ -1,0 +1,31 @@
+<div class="card " style="width: 70%;">
+    <form action="/profileEdit" method="POST" enctype="multipart/form-data"  class="m-auto mt-2">
+        <img class="card-img-top" src="/img/{{userLogin.photo.filename}}" alt="Card image cap">
+        <label> Uploud your image</label>
+        <input type="file" name="uploadPic" >
+        <div class="card-body">
+            <fieldset>
+                <legend><span class="number">1</span>Your basic info</legend>
+                
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="first_name" value="{{userLogin.first_name}}">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="name1" name="last_name" value="{{userLogin.last_name}}">
+
+                <label for="mail">Email:</label>
+                <input type="email" id="mail" name="email" value="{{userLogin.email}}">
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" value="{{userLogin.password}}">
+                <div class="row d-flex justify-content-between">
+                    <label>Age:</label>
+                    <input type="number" id="age" name="age" class="col-4" value="{{userLogin.age}}">
+                    <label> Birth date:</label>
+                    <input type="date" id="bDate" name="bDate" class="col-4" value="{{userLogin.dateOfBirth}}">
+                </div>
+
+            </fieldset>
+            <button type="submit" id="signupbtn">Update</button>
+        </div>
+    </form>
+</div>

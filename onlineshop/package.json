@@ -1,0 +1,20 @@
+{
+  "name": "onlineshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "mai",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "*",
+    "express-session": "^1.17.1",
+    "hbs": "*",
+    "mongoose": "^5.10.5",
+    "multer": "^1.4.2",
+    "connect-flash": "*"
+  }
+}

@@ -1,0 +1,45 @@
+<div class="social-box container" style="margin-top: 4%; height:900px; box-shadow: 1px 1px 4px rgba(49, 48, 48, 0.719)">
+    <div class="header bg-cyan fg-white">
+        <img src="/img/{{userLogin.photo.filename}}" class="avatar" style="width:130px">
+        {{#if userLogin}}
+        <a href="/profileEdit"><button type="button" class="btn btn-secondary"><i
+                    class="fas fa-user-edit"></i></button></a>
+        <div class="m-auto">
+            <div class="title">{{userLogin.first_name}} {{userLogin.last_name}}</div>
+            <div class="subtitle">{{userLogin.email}}</div>
+        </div>
+        {{/if}}
+    </div>
+    <ul class="skills" style="margin-top: 50px;">
+        <li>
+            <div class="text-bold">6</div>
+            <div>Products bought</div>
+        </li>
+        <li>
+            <div class="text-bold">4</div>
+            <div>Saved Items</div>
+        </li>
+        <li>
+            <div class="text-bold">36</div>
+            <div>Cart</div>
+        </li>
+    </ul>
+    <hr>
+    <div class="container"><a href="/Product"><button class="btn btn-outline-info my-2 my-sm-0"><i
+                    class="fas fa-plus-square"></i> add product</button></a></div>
+    <div class="d-flex">
+        {{#each userProduct}}
+        <div class="card col-3 ml-1">
+            <a href="/productID/{{_id}}">
+                <img class="card-img-top" src="/img/{{photo.filename}}" alt="Card image cap">
+                <div class="card-body">
+                    <h2>{{articaleName}}</h2>
+                    <h4>Price:<span style="font-size: large;color: green;">{{articalePrice}}<i
+                                class="fas fa-euro-sign"></i></span></h4>
+                    <p class="card-text">{{description}}</p>
+                </div>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+</div>

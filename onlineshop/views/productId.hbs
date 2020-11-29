@@ -1,0 +1,15 @@
+{{#with data}}
+<div class="card mb-3 m-auto" style="max-width: 540px;">
+  <div class="row no-gutters">
+    
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ product_name }}</h5>
+        <h6 class="card-text">ID: <b>{{ _id }}</b> </h6>
+        <h6 class="card-text">Price: <span style="color: green;"> {{ price }} <i class="fas fa-euro-sign"></i> </span></h6>
+        <p class="card-text"><small class="text-muted"><b >Last updated </b>  {{ created_at }}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+{{/with}}

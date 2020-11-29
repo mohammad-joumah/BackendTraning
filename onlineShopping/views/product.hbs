@@ -1,0 +1,23 @@
+<form action="/product" method="POST" enctype="multipart/form-data" id="signup">
+    <h1>Add Product</h1>
+
+    <fieldset>
+        <legend><span class="number">1</span>Your basic info</legend>
+        {{!-- <label for="name">ID:</label>
+    <input type="text" id="name" name="user_id" required> --}}
+        <label for="articaleName">Articale Name:</label>
+        <input type="text" id="articaleName" name="articaleName">
+        <label for="articalePrice">Articale Price</label>
+        <div class="d-flex col-6"><input type="number" id="articalePrice" name="articalePrice"><i class="fas fa-euro-sign" style="font-size: large;color: brown;"></i></div>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" placeholder="description"></textarea>
+
+        
+        <label> Uploud Articale image</label>
+        <input type="file" name="upload">
+    </fieldset>
+    <div class="d-flex">
+    <button type="submit" id="signupbtn" class="col-3">Add Article</button> <button type="reset" id="signupbtn" class="col-3" style="background-color: red;border: 1px solid red;">Reset</button>
+    </div>
+</form>
